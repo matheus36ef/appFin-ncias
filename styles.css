@@ -74,7 +74,16 @@ header h1#logo {
     background: #4aa264;
     color: white;
 }
-
+/*Transações------------------------------------------------------*/
+#data-table {
+    width: 100%;
+    border-spacing: 0 0.5rem;
+}
+table thead tr th:first-child, /* :first-child está pegando o primeiro*/
+table tbody tr td:first-child {
+        border-radius: 0.25rem 0 0 0.25rem;
+        
+}
 
 /* --- */
 table th {

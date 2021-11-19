@@ -72,7 +72,7 @@ header h1#logo {
 }
 .card.total {
     background: #4aa264;
-    color: rgb(102, 16, 16); /*Modi*/
+    color: white;
 }
 /*Transações------------------------------------------------------*/
 #data-table {
@@ -86,7 +86,7 @@ table tbody tr td:first-child {
 }
 
 /* --- */
-table th {
+table thead th {
     background: white;
     padding: 1rem 2rem;
 
@@ -95,13 +95,13 @@ table th {
     color: #969cb3;
     text-align: left;
 }
-table td {
+table tdoby td {
     background: white;
     padding: 1rem 2rem;
     
 }
 
-table tr {
+table tbody tr {
     opacity: 0.7;
 }
 table tr:hover{
@@ -109,28 +109,22 @@ table tr:hover{
     
 }
 
-
-
-
-
-
-
-
-/* minha versão
-#data-table {
-    width: min(90vw, 800px);
-    margin: auto;
-    
+td.description {
+    color: var(--dark-blue);
 }
-#data-table .card {
-    border-radius: 0.25rem;
-    margin-bottom: 2rem;
+td.income {
+    color: #12a454;
 }
-*/
+td.expense {
+    color: #e92929;
+}
 
 /*Footer  --------------------------------------------------------*/
 footer {
     text-align: center;
+    padding: 4rem 0 2rem 2rem;
+    color: var(--dark-blue);
+    opacity: 0.6;
 }
 
 /*

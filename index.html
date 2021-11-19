@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dev.Finâncias</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2? display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./styles.css">
 </head>
 
@@ -14,7 +18,7 @@
     <header>
         <h1 id="logo">dev.finance$</h1>
     </header>
-    <main>
+    <main class="container">
 
 
         <section id="balance">
@@ -28,7 +32,7 @@
                 <h3>Saídas</h3>
                 <p>R$ 2.000,00</p>
             </div>
-            <div class="card">
+            <div class="card total">
                 <h3>Total</h3>
                 <p>R$ 3.000,00</p>
             </div>
@@ -41,24 +45,24 @@
 
             <table id="data-table">
                 <thead>
-                    <tr>
+                    <tr class="card">
                         <th>Descrição</th>
                         <th>Valor</th>
                         <th>Data</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr class="card">
                         <td>Luz</td>
                         <td> - R$300,00</td>
                         <td>17/11/21</td>
                     </tr>
-                    <tr>
+                    <tr class="card">
                         <td>Agua</td>
                         <td> - R$ 150,00</td>
                         <td>17/11/21</td>
                     </tr>
-                    <tr>
+                    <tr class="card">
                         <td>App Web</td>
                         <td> + R$ 5000,00</td>
                         <td>20/11/21</td>

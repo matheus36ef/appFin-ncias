@@ -129,9 +129,15 @@ header h1#logo {
     color: white;
 }
 /*Transações------------------------------------------------------*/
+#transaction {
+    display: block;
+    width: 100%;
+    overflow-x: auto;    
+}
 #data-table {
     width: 100%;
     border-spacing: 0 0.5rem;
+    color: #969cb3;  
 }
 table thead tr th:first-child, /* :first-child está pegando o primeiro*/
 table tbody tr td:first-child {

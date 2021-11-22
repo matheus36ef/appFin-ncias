@@ -4,7 +4,7 @@
   "description": "Projeto desenvolvido pela Rockeseat dentro do curso trilha Dirscover, a fim de treinar\r e consolidar alguns conhecimentos basicos em HTML, CSS, e JS.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "./src/server.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/matheus36ef/appFin-ncias#readme",
   "dependencies": {
+    "expo-cli": "^4.13.0",
     "express": "^4.17.1"
   }
 }

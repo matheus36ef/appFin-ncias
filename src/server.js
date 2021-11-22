@@ -8,9 +8,7 @@ app.get('/', (req, res) => {
     res.render('../public/index.html');
 })
 
-app.get('/teste', (req, res) => {
-    res.render('../public/calculadora.html')
-})
+
 
 
 app.listen(8080, () => {

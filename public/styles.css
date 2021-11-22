@@ -18,9 +18,27 @@ h2 {
     box-sizing: border-box;
 }
 
+html {
+    font-size: 93.75%;
+}
+
 body {
     background: #f0f2f5;
     font-family: 'Shippori Antique B1', sans-serif;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+
+    white-space: nowrap;
+    border-width: 0;
 }
 
 .container {
@@ -29,6 +47,38 @@ body {
     margin: auto;
 }
 
+/*Links & Buttons------------------------------------------------------*/
+/*Botão Nova transação*/
+a {
+    color: #49AA26;
+    text-decoration: none;
+}
+a:hover {
+    color: #3dd705;
+}
+.button.new {
+    display: inline-block;
+    margin-bottom: .8rem;
+}
+
+/*Botão de excluir transações*/
+a.botton_esclud img {
+    width: 1.5rem;
+}
+
+/*
+.button.new{
+    color: rgb(44, 77, 39);
+    text-decoration: none;
+    font-weight: 200;
+
+    opacity: 0.7;
+}
+.button.new:hover {
+    opacity: 1;
+    color: #2d4a22;
+}
+*/
 
 
 /*header----------------------------------------------------------*/
@@ -63,6 +113,10 @@ header h1#logo {
 .card h3 {
     font-weight: normal;
     font-size: 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .card p {
     font-size: 2rem;
@@ -75,14 +129,26 @@ header h1#logo {
     color: white;
 }
 /*Transações------------------------------------------------------*/
+#transaction {
+    display: block;
+    width: 100%;
+    overflow-x: auto;    
+}
 #data-table {
     width: 100%;
     border-spacing: 0 0.5rem;
+    color: #969cb3;  
 }
 table thead tr th:first-child, /* :first-child está pegando o primeiro*/
 table tbody tr td:first-child {
-        border-radius: 0.25rem 0 0 0.25rem;
-        
+        border-radius: 0.25rem 0 0 0.25rem;   
+}
+table thead tr th:last-child,
+table tbody tr td:last-child {
+        border-radius: 0 0.25rem 0.25rem 0;
+}
+table .description {
+    padding-inline-start: 0.5rem;
 }
 
 /* --- */
@@ -95,14 +161,15 @@ table thead th {
     color: #969cb3;
     text-align: left;
 }
-table tdoby td {
+table tbody td {
     background: white;
-    padding: 1rem 2rem;
-    
+    padding: 1rem 2rem;   
 }
 
 table tbody tr {
+    background: white;
     opacity: 0.7;
+    
 }
 table tr:hover{
     opacity: 1;
@@ -131,3 +198,17 @@ footer {
 Algumas outras coisas
 ...
 */
+
+
+/* Responsividade------------------------------------------------- */
+@media (min-width: 800px) {
+    html {
+        font-size: 87.5%;
+    }
+    #balance {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr; /* Quando repetimos, e queremos fazer um atalho para isso, poremos usar o repeat()
+        ex: grid-template-columns: repeat(3, 1fr) [estamos falando, para repetir 3x o tamano 1fr] */
+        gap: 2rem;
+    }
+} 

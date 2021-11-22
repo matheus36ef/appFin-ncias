@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/matheus36ef/appFin-ncias#readme",
   "dependencies": {
-    "expo-cli": "^4.13.0",
     "express": "^4.17.1"
   }
 }

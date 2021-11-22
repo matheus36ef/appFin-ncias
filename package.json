@@ -1,0 +1,22 @@
+{
+  "name": "matheus",
+  "version": "1.0.0",
+  "description": "Projeto desenvolvido pela Rockeseat dentro do curso trilha Dirscover, a fim de treinar\r e consolidar alguns conhecimentos basicos em HTML, CSS, e JS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matheus36ef/appFin-ncias.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matheus36ef/appFin-ncias/issues"
+  },
+  "homepage": "https://github.com/matheus36ef/appFin-ncias#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

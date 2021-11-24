@@ -2,6 +2,9 @@
 /*Cores-----------------------------------------------------------*/
 :root {
     --dark-blue: #363f5f;
+    --green: #49AA26;
+    --light-green: #3dd705;
+    --red: #e92929;
 }
 /*Titulos---------------------------------------------------------*/
 h2 {
@@ -50,15 +53,54 @@ body {
 /*Links & Buttons------------------------------------------------------*/
 /*Botão Nova transação*/
 a {
-    color: #49AA26;
+    color: var(--green);
     text-decoration: none;
 }
 a:hover {
-    color: #3dd705;
+    color: var(--light-green);
 }
 .button.new {
     display: inline-block;
     margin-bottom: .8rem;
+}
+button {
+    width: 100%;
+    height: 50px;
+
+    border: none;
+    color: white;
+    background: var(--green);
+
+    padding: 0;
+
+    border-radius: 0.25rem;
+
+    cursor: pointer;
+}
+button:hover {
+    background: var(--light-green);
+    transition: all 0.5s ease;
+}
+.button.cancel {
+    color: var(--red);
+
+    border: 2px var(--red) solid;
+    border-radius: 0.25rem;
+
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0.6;
+}
+.button.cancel:hover {
+    background: var(--red);
+    color: #f0f2f5;
+     
+    opacity: 1;
+    transition: all 0.5s ease
 }
 
 /*Botão de excluir transações*/
@@ -185,6 +227,105 @@ td.income {
 td.expense {
     color: #e92929;
 }
+/*Modal-----------------------------------------------------------*/
+.modal-overlay {
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.7);
+
+    position: fixed;
+    top: 0;
+    /*Posicionando o conteúdo dentro dessa caixa*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 0; /* Opacity sozinho, esconde mas a area dele fica sendo ocupada.*/
+    visibility: hidden; /* Com o visibily a area dele passa a não ser ocupada*/
+
+}
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    transition: all 2s ease;
+}
+.modal {
+    background: #f0f2f5;
+    
+    padding: 2.4rem; 
+
+    width: 90%;
+    max-width: 500px;
+
+    height: 90%;
+    max-height: 300px;
+}
+
+/*Personalizando o interior do modal*/
+/*form*/
+
+#form {
+    max-width: 500px;
+    
+}
+#form h2{
+    margin-top: 0;
+}
+#form form input {
+    border: none;
+    border-radius: 0.2rem;
+
+    padding: 0.8rem;
+
+    width: 100%;
+}
+.input-group {
+    margin-top: 0.8rem;
+}
+.input-group small {
+    opacity: 0.5;
+}
+.input-group.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.input-group.actions .button,
+.input-group.actions button {
+    width: 48%;
+} 
+
+
+
+/*
+.modal #NewTrDecrição {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.modal #NewTrValor {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.modal p {
+    grid-column-start:1;
+    grid-column-end:3;
+}
+.modal #NewTrDate {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.modal #cancelar {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+.modal #enviar {
+    grid-column-start: 2;
+    grid-column-end: 2;
+} 
+
+*/
+
 
 /*Footer  --------------------------------------------------------*/
 footer {
@@ -211,4 +352,13 @@ Algumas outras coisas
         ex: grid-template-columns: repeat(3, 1fr) [estamos falando, para repetir 3x o tamano 1fr] */
         gap: 2rem;
     }
+    
 } 
+@media (max-width: 500px) {
+    #form {
+        font-size: 80%;
+    }
+    #form form input {
+        padding: 0.2rem
+    }
+}

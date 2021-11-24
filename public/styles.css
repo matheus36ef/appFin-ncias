@@ -23,6 +23,7 @@ h2 {
 
 html {
     font-size: 93.75%;
+    scroll-behavior: smooth; /*Faz a pagina rolar de forma suave. Também vai ajudar quando clica para criar uma nova transação em mobile)*/
 }
 
 body {
@@ -244,22 +245,33 @@ td.expense {
     opacity: 0; /* Opacity sozinho, esconde mas a area dele fica sendo ocupada.*/
     visibility: hidden; /* Com o visibily a area dele passa a não ser ocupada*/
 
+    z-index: 99;
 }
 .modal-overlay.active {
     opacity: 1;
     visibility: visible;
-    transition: all 2s ease;
+    transition: all 1s ease;
+}
+.modal-overlay.close {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease;
 }
 .modal {
     background: #f0f2f5;
     
     padding: 2.4rem; 
+    
+    position: relative;
 
     width: 90%;
     max-width: 500px;
 
     height: 90%;
     max-height: 300px;
+    
+    z-index: 1;
+    
 }
 
 /*Personalizando o interior do modal*/

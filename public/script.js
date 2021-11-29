@@ -84,14 +84,14 @@ const DOM = {
 
     addTransaction(transactions, index){
         const tr = document.createElement('tr');
-        tr.innerHTML = DOM.innerHTMLTransection(transactions);
-        
+        tr.innerHTML = DOM.innerHTMLTransection(transactions, index);
+        tr.dataset.index = index;
 
         DOM.transactionsContainer.appendChild(tr);
     },
 
     /*Criando a mascara, o template */
-    innerHTMLTransection(transactions) {
+    innerHTMLTransection(transactions, index) {
         const CSSclass = transactions.amount > 0 ? "income" : "expense"
         
         const amoutn = Utils.formatCurrency(transactions.amount);
@@ -105,7 +105,7 @@ const DOM = {
             <td class="date">${transactions.date}</td>
             <td>
                 <a href="#" class="botton_esclud">
-                <img src="./assets/minus.svg" alt="Botão de menos">
+                <img onclick="Transaction.remove(${index})" src="./assets/minus.svg" alt="Botão de menos">
                 </a>
             </td>
         </tr>
@@ -136,7 +136,7 @@ const DOM = {
     }
 }
 
-const Utils = {
+const Utils = { // Formataçoes -- 
     // Formatação de valores do imput / form
     formatAmount(value){
         value = Number(value) * 100
@@ -248,9 +248,7 @@ const Form = {
 
 const App = {
     init() { 
-        Transaction.all.forEach((transection) => {
-            DOM.addTransaction(transection);
-        })
+        Transaction.all.forEach(DOM.addTransaction);
 
         DOM.updateBalance();
 

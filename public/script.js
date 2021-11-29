@@ -17,24 +17,31 @@ const Modal = {
     }
 }
 
+const Storage = {
+    // Pegar as informações
+    get() {
+        /* Aqui estamos retornando um array, transformardo.
+           a propriedade (.parse) irá transformar uma string em array ou objeto. 
+        */
+        return JSON.parse(localStorage.getItem("dev.finances:transactions")) || [];
+        /*Estamos falando: retorne JSON transformando em array, a string que está em localStorage.getItem('na chave dev.finances...') 
+        caso não tenha essa chave me retorne um array vazio.
+        */
+    },
+
+    // Guardar
+    set(transactions) {
+        /**
+         * Aqui estámos colocando oque vem de transactions no localStorage, 
+         * transformando em string. utilizando a propriedade stringify
+         */
+        localStorage.setItem("dev.finances:transactions", JSON.stringify(transactions));
+        // Estamos falanod: coloque em localstorage na chave "dev.finances:... transformando em string o (transactions)"
+    }
+}
+
 const Transaction = {
-    all: [
-        {
-            description: 'Luz',
-            amount: -50015,
-            date: '23/01/2021'
-        },
-        {
-            description: 'Criação website',
-            amount: 500000,
-            date: '23/01/2021'
-        },
-        {
-            description: 'Internet',
-            amount: 20000,
-            date: '23/01/2021'
-        },
-    ],
+    all: Storage.get(),
 
     add(transaction){
         Transaction.all.push(transaction);
@@ -95,6 +102,8 @@ const DOM = {
         const CSSclass = transactions.amount > 0 ? "income" : "expense"
         
         const amoutn = Utils.formatCurrency(transactions.amount);
+
+        
 
         
 
@@ -174,7 +183,9 @@ const Form = {
     amount: document.querySelector('input#amount'),
     date: document.querySelector('input#date'),
 
+
     getValues() {
+
         return {
             description: Form.description.value,
             amount: Form.amount.value,
@@ -252,6 +263,7 @@ const App = {
 
         DOM.updateBalance();
 
+        Storage.set(Transaction.all);
     },
     
     reload() {
@@ -260,8 +272,8 @@ const App = {
     },
 }
 
+
+
 App.init();
-
-
 
 

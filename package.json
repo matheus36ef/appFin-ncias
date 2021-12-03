@@ -4,7 +4,7 @@
   "description": "Projeto desenvolvido pela Rockeseat dentro do curso trilha Dirscover, a fim de treinar\r e consolidar alguns conhecimentos basicos em HTML, CSS, e JS.",
   "main": "index.js",
   "scripts": {
-    "dev": "./src/server.js"
+    "dev": "node src/server.js"
   },
   "repository": {
     "type": "git",
